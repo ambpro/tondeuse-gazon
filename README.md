@@ -3,6 +3,22 @@
 ## About "La tondeuse"
 
 The company MowItNow has decided to develop an automatic lawn mower, intended for rectangular surfaces.
+
+### Objective
+Design and write a program running on a JVM ≥ 1.7, a web browser or a node.js server, and implementing the above specification and passing the test below
+
+TEST
+The following file is provided as input:
+5 5
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADDA
+
+We await the following result (final position of the mowers):
+1 3 N
+5 1 E
+
 ## Prerequisite for this application.
 
 - JDK 1.8 
