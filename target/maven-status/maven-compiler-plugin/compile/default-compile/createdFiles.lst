@@ -1,0 +1,11 @@
+org/ambpro/service/deplacement/api/TypeDeplacement.class
+org/ambpro/utils/commande/Orientation.class
+org/ambpro/service/machine/data/Position.class
+org/ambpro/App.class
+org/ambpro/service/deplacement/impl/Mouvement$1.class
+org/ambpro/service/machine/impl/Tondeuse.class
+org/ambpro/service/machine/api/Machine.class
+org/ambpro/utils/commande/Orientation$1.class
+org/ambpro/service/deplacement/impl/Mouvement.class
+org/ambpro/utils/io/GestionInstruction.class
+org/ambpro/service/machine/data/Surface.class
