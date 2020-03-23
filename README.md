@@ -2,7 +2,7 @@
 
 ## About "La tondeuse"
 
-La société MowItNow a décidé de développer une tondeuse à gazon automatique, destinée aux surfaces rectangulaires.
+The company MowItNow has decided to develop an automatic lawn mower, intended for rectangular surfaces.
 ## Prerequisite for this application.
 
 - JDK 1.8 
