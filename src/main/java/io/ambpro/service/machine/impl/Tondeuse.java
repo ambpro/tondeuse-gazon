@@ -1,7 +1,7 @@
 package io.ambpro.service.machine.impl;
 
 import io.ambpro.service.deplacement.api.IDeplacement;
-import io.ambpro.service.machine.api.Machine;
+import io.ambpro.service.machine.api.IMachine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
 
@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Tondeuse implements Machine{
+public class Tondeuse implements IMachine{
     private Position position;
     private int vitesse;
     private char[] instructions;

@@ -3,7 +3,7 @@ package io.ambpro.service.machine.api;
 import io.ambpro.service.deplacement.api.IDeplacement;
 import io.ambpro.service.machine.data.Position;
 
-public interface Machine {
+public interface IMachine {
 
     void execute(IDeplacement typeDeplacement);
 

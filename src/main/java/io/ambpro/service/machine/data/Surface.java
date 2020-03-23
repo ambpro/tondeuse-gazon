@@ -1,6 +1,6 @@
 package io.ambpro.service.machine.data;
 
-import io.ambpro.service.machine.api.Machine;
+import io.ambpro.service.machine.api.IMachine;
 
 import lombok.*;
 
@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Surface {
-	private Machine[][] machines;
+	private IMachine[][] machines;
 	private int ordonneeMax;
 	private int abscisseMax;
 	private static Surface INSTANCE = new Surface();
@@ -24,7 +24,7 @@ public class Surface {
 	 * @param machine     : tondeuse avec sa postion actuelle
 	 * @param newPosition : nouvelle position demandee
 	 */
-	public void changerPosition(Machine machine, Position newPosition) {
+	public void changerPosition(IMachine machine, Position newPosition) {
 		if (positionValide(machine.getPosition(), newPosition) && machines[machine.getPosition().getX()][machine.getPosition().getY()] == machine) {
 			machines[machine.getPosition().getX()][machine.getPosition().getY()] = null;
 			machine.setPosition(newPosition);
@@ -37,7 +37,7 @@ public class Surface {
 	 * 
 	 * @param machine : tondeuse a ajouter
 	 */
-	public void addMachine(Machine machine) {
+	public void addMachine(IMachine machine) {
 		Position positionTondeuse = machine.getPosition();
 		if (positionValide(positionTondeuse)) {
 			machines[positionTondeuse.getX()][positionTondeuse.getY()] = machine;

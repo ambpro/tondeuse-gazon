@@ -1,6 +1,6 @@
 package io.ambpro.service.data;
 
-import io.ambpro.service.machine.api.Machine;
+import io.ambpro.service.machine.api.IMachine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
 import io.ambpro.service.machine.impl.Tondeuse;
@@ -24,8 +24,8 @@ class SurfaceTest {
     private static Position positionC;
     private static Position positionD;
     private static Surface surface;
-    private static Machine machineT;
-    private static Machine machineT2;
+    private static IMachine machineT;
+    private static IMachine machineT2;
 
 
     @BeforeEach
@@ -45,7 +45,7 @@ class SurfaceTest {
         surface = Surface.getSurface();
         surface.setAbscisseMax(6);
         surface.setOrdonneeMax(6);
-        surface.setMachines(new Machine[surface.getAbscisseMax()][surface.getOrdonneeMax()]);
+        surface.setMachines(new IMachine[surface.getAbscisseMax()][surface.getOrdonneeMax()]);
     }
 
     @AfterEach
@@ -77,9 +77,9 @@ class SurfaceTest {
 
         machineT2.setPosition(positionC);
         surface.addMachine(machineT2);
-        Stream<Machine[]> temp = Arrays.stream(surface.getMachines());
-        Stream<Machine> stringStream = temp.flatMap(x -> Arrays.stream(x));
-        Stream<Machine> stream = stringStream.filter(x -> machineT2 == (x));
+        Stream<IMachine[]> temp = Arrays.stream(surface.getMachines());
+        Stream<IMachine> stringStream = temp.flatMap(x -> Arrays.stream(x));
+        Stream<IMachine> stream = stringStream.filter(x -> machineT2 == (x));
 
         assertEquals(0,stream.count());
     }

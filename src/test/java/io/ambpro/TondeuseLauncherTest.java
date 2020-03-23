@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import io.ambpro.service.machine.api.Machine;
+import io.ambpro.service.machine.api.IMachine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
 import io.ambpro.service.machine.impl.Tondeuse;
@@ -35,7 +35,7 @@ public class TondeuseLauncherTest
     void initTondeuse() {
         String postion = null;
         String instruction = null;
-        Machine machine = TondeuseLauncher.initTondeuse(postion,instruction,regexPositionTondeuse,regexInstructions,vitesse);
+        IMachine machine = TondeuseLauncher.initTondeuse(postion,instruction,regexPositionTondeuse,regexInstructions,vitesse);
         assertNull(machine);
 
         postion = "1 N";
@@ -58,7 +58,7 @@ public class TondeuseLauncherTest
         instruction = "AAGDDA";
         char[] instructionTab = new char[]{'A','A','G','D','D','A'};
         machine = TondeuseLauncher.initTondeuse(postion,instruction,regexPositionTondeuse,regexInstructions,vitesse);
-        Machine machineResultatAttendu = new Tondeuse(pos,vitesse,instructionTab);
+        IMachine machineResultatAttendu = new Tondeuse(pos,vitesse,instructionTab);
         assertEquals(machineResultatAttendu, machine);
 
     }
