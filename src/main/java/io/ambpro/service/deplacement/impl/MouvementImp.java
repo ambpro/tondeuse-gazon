@@ -1,6 +1,6 @@
 package io.ambpro.service.deplacement.impl;
 
-import io.ambpro.service.deplacement.api.TypeDeplacement;
+import io.ambpro.service.deplacement.api.IDeplacement;
 import io.ambpro.service.machine.api.Machine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
@@ -10,13 +10,12 @@ import lombok.NonNull;
 
 
 /**
- * Classe de gestion des deplacements
+ * Gestion des mouvements
  */
-public class Mouvement implements TypeDeplacement{
+public class MouvementImp implements IDeplacement{
 
     public void avancer(Surface surface, Machine machine) {
         Orientation orientation = machine.getPosition().getOrientation();
-        Position newPosition;
         int x = machine.getPosition().getX();
         int y = machine.getPosition().getY();
 
@@ -37,23 +36,21 @@ public class Mouvement implements TypeDeplacement{
                  x = y = -1;
         }
 
-        newPosition = new Position(x,y,orientation);
+        Position newPosition = new Position(x,y,orientation);
         surface.changerPosition(machine, newPosition);
     }
 
     public void tournerAGauche(@NonNull Machine machine){
-       //System.out.print(machine.getPosition().toString()+"---->");
        Position position = machine.getPosition();
-       if (position != null && position.getOrientation()!=null)
-            position.setOrientation(position.getOrientation().plusAGauche());
-       //System.out.println(machine.getPosition().toString());
+       if (position != null && position.getOrientation()!=null) {
+           position.setOrientation(position.getOrientation().plusAGauche());
+       }
     }
 
     public void tournerADroite(Machine machine){
-        //System.out.print(machine.getPosition().toString()+"---->");
         Position position = machine.getPosition();
-        if (position != null && position.getOrientation()!=null)
+        if (position != null && position.getOrientation()!=null) {
             position.setOrientation(position.getOrientation().plusADroite());
-        //System.out.println(machine.getPosition().toString());
+        }
     }
 }

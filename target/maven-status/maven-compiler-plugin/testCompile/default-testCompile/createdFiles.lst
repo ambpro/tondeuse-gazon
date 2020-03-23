@@ -1,5 +1,5 @@
-io/ambpro/service/deplacement/MouvementTest.class
 io/ambpro/service/data/TondeuseTest.class
 io/ambpro/service/data/SurfaceTest.class
 io/ambpro/TondeuseLauncherTest.class
-org/ambpro/utils/GestionInstructionTest.class
+io/ambpro/utils/GestionInstructionTest.class
+io/ambpro/service/deplacement/MouvementImplTest.class

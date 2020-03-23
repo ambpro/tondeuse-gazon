@@ -8,14 +8,14 @@ import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import io.ambpro.service.deplacement.impl.Mouvement;
+import io.ambpro.service.deplacement.impl.MouvementImp;
 import io.ambpro.service.machine.api.Machine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
 import io.ambpro.service.machine.impl.Tondeuse;
 import io.ambpro.utils.commande.Orientation;
 
-class MouvementTest {
+class MouvementImplTest {
 
     private static Position positionDepart;
     private static Position positionArrivee;
@@ -23,7 +23,7 @@ class MouvementTest {
     private static Position positionD;
     private static Surface surface;
     private static Machine machineT;
-    private static Mouvement explorer;
+    private static MouvementImp explorer;
     private static int vitesse;
 
 
@@ -42,7 +42,7 @@ class MouvementTest {
         surface.setAbscisseMax(6);
         surface.setOrdonneeMax(6);
         surface.setMachines(new Machine[surface.getAbscisseMax()][surface.getOrdonneeMax()]);
-        explorer = new Mouvement();
+        explorer = new MouvementImp();
 
 
     }

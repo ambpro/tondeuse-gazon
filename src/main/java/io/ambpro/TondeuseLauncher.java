@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
-import io.ambpro.service.deplacement.api.TypeDeplacement;
-import io.ambpro.service.deplacement.impl.Mouvement;
+import io.ambpro.service.deplacement.api.IDeplacement;
+import io.ambpro.service.deplacement.impl.MouvementImp;
 import io.ambpro.service.machine.api.Machine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
@@ -32,8 +32,7 @@ public class TondeuseLauncher
 		String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		String appConfigPath = rootPath + "app.properties";
 		appProps = new Properties();
-		try {
-			InputStream input = new FileInputStream(appConfigPath);
+		try (InputStream input = new FileInputStream(appConfigPath)){
 			appProps.load(input);
 			input.close();
 			String fichierIn = appProps.getProperty("file.path");
@@ -50,7 +49,7 @@ public class TondeuseLauncher
 			Surface gazon = initSurface(data[0], regexGazon);
 
 			// initialisation du type de deplacement
-			TypeDeplacement typeDeplacement = new Mouvement();
+			IDeplacement typeDeplacement = new MouvementImp();
 
 			if (gazon != null) {
 				// creation des tondeuses

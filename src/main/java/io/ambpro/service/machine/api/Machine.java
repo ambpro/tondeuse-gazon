@@ -1,11 +1,11 @@
 package io.ambpro.service.machine.api;
 
-import io.ambpro.service.deplacement.api.TypeDeplacement;
+import io.ambpro.service.deplacement.api.IDeplacement;
 import io.ambpro.service.machine.data.Position;
 
 public interface Machine {
 
-    void execute(TypeDeplacement typeDeplacement);
+    void execute(IDeplacement typeDeplacement);
 
     Position getPosition();
 

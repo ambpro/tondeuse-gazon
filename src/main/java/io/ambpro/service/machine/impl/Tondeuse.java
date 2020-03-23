@@ -1,6 +1,6 @@
 package io.ambpro.service.machine.impl;
 
-import io.ambpro.service.deplacement.api.TypeDeplacement;
+import io.ambpro.service.deplacement.api.IDeplacement;
 import io.ambpro.service.machine.api.Machine;
 import io.ambpro.service.machine.data.Position;
 import io.ambpro.service.machine.data.Surface;
@@ -20,7 +20,7 @@ public class Tondeuse implements Machine{
     /**
      * Execute les instructions donnees à la tondeuse
      */
-    public void execute(TypeDeplacement typeDeplacement) {
+    public void execute(IDeplacement typeDeplacement) {
         Surface gazon = Surface.getSurface();
         for(int i=0; i<instructions.length;i++){
             switch (instructions[i]){

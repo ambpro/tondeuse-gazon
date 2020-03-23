@@ -1,4 +1,4 @@
-package org.ambpro.utils;
+package io.ambpro.utils;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
