@@ -49,7 +49,7 @@ public class TondeuseLauncher
 			Surface gazon = initSurface(data[0], regexGazon);
 
 			// initialisation du type de deplacement
-			IDeplacement typeDeplacement = new MouvementImp();
+			IDeplacement deplacement = new MouvementImp();
 
 			if (gazon != null) {
 				// creation des tondeuses
@@ -65,7 +65,7 @@ public class TondeuseLauncher
 					gazon.addMachine(machine);
 					// lancement de la tondeuse
 					System.out.println("--------------START TONDEUSE-------------");
-					machine.execute(typeDeplacement);
+					machine.execute(deplacement);
 					// System.out.println("---------------------------------------");
 					System.out.println(machine.getPosition().toString());
 					System.out.println("--------------END TONDEUSE-------------");
@@ -74,7 +74,7 @@ public class TondeuseLauncher
 				}
 				
 				// écrit le résultat dans un fichier
-				// gestionnaireFichier.ecrireLignes(resultats, fichierOut);
+				GestionInstruction.ecrireLignes(resultats, fichierOut);
 
 			} else {
 				System.out.println("Erreur format surface invalide.");
