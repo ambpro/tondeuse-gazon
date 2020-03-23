@@ -65,11 +65,11 @@ public class App
 					// postionnement de la tondeuse
 					gazon.addMachine(machine);
 					// lancement de la tondeuse
-					// System.out.println("--------------START TONDEUSE-------------");
+					System.out.println("--------------START TONDEUSE-------------");
 					machine.execute(typeDeplacement);
 					// System.out.println("---------------------------------------");
 					System.out.println(machine.getPosition().toString());
-					// System.out.println("--------------END TONDEUSE-------------");
+					System.out.println("--------------END TONDEUSE-------------");
 					resultats.add(machine.getPosition().toString());
 					initSurface(data[0], regexGazon);
 				}
