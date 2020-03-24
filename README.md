@@ -34,8 +34,16 @@ We await the following result (final position of the mowers):
 ## Set up Application
 
 1. Clone the repository https://github.com/ambpro/tondeuse-gazon.git
-2. Add as maven project in your IDE
-3. Select project sdk as JDK 1.8
+2. Import as maven project in your IDE
+
+## Configure Application Input/Output files
+The configuration file is located on ‘tondeuse-gazon/src/main/resources‘ directory.
+It's used to configure the relative path of the input / output of the application. 
+
+```
+file.path=src/main/resources/tondeuse.txt
+fileOut.path=src/main/resources/tondeuseOut.txt
+```
 
 ## Run Test cases
 ### Run from command prompt or Terminal
